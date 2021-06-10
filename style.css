@@ -1,0 +1,49 @@
+body{
+    padding: 2%;
+    background-color: rgb(39, 38, 38);
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: whitesmoke;
+}
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: whitesmoke;
+}
+h4{
+    color:whitesmoke;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+#button{  
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    bottom:0px;
+    background-color: dimgrey;
+    color: whitesmoke;
+    height: 30px;
+    border-radius: 5px;
+}
+#movie{
+    display: inline-grid;
+    grid-template-columns: 50px, 50px, 50px, 50px;
+    grid-template-rows: 50px, 50px, 50px, 50px;
+}
+#movieImage{
+    padding: 5px;
+    height:350px;
+    width:225px;
+}
+#movieTitle{
+    padding: 5px;
+    height:40px;
+    width:225px;
+}
+#rating{
+    padding: 5px;
+}
