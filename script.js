@@ -8,23 +8,6 @@ const movieArea = document.getElementById("movies");
 const loadBtn = document.getElementById("button");
 const loadForm = document.getElementById("searchMovies");
 loadForm.addEventListener("submit", searchForMovies);
-
-/*var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn")
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function(){
-    modal.style.display = "block";
-}
-span.onclick = function(){
-    modal.style.display = "none"
-}
-
-window.onclick = function(event){
-    if (event.target == modal){
-        modal.style.display = "none";
-    }
-}*/
 /*
 Example API Request: https://api.themoviedb.org/3/search/movie?api_key=8c30e394ac60b88dd3d26490d12af360
 https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
@@ -69,10 +52,8 @@ async function getMovies(){
     jsonMovies.results.forEach(element => {
         //need to figure out how to use element
        var modal = document.getElementById("myModal");
-      //  var img = document.getElementById("movieImage")
         var modalImg = document.getElementById("img1");
         var captionText = document.getElementById("caption");
-      //  console.log(document.getElementById("movieImage"))
         var img = `https://image.tmdb.org/t/p/original${element.poster_path}`
        
         img.onclick = function(){
@@ -103,9 +84,7 @@ async function searchForMovies(event){
     const findMovie = searchInput.value;
     const apiUrlSearch=`https://api.themoviedb.org/3/search/movie?query=${findMovie}&api_key=${apiKey}&language=en-US&page=${page}&include_adult=false`
     const fetchMovieSearch = await fetch(apiUrlSearch);
-   // console.log(fetchMovieSearch);
     const fetchMovieSearchJson = await fetchMovieSearch.json();
-   // console.log("search json", fetchMovieSearchJson);
 
     //remove now playing movies from innerhtml
     movies.innerHTML="";
@@ -114,6 +93,7 @@ async function searchForMovies(event){
     now_playing.innerHTML = `<h2>Search Results</h2>`
     loadBtn.style.display = 'none';
     clearbtn.innerHTML = `<button id="btnClear">Clear Search</button>`
+    btnClear.style.display = 'block'
     btnClear.onclick = function() {
         movies.innerHTML="";
         now_playing.innerHTML = `<h2>Now Playing</h2>`
@@ -121,6 +101,7 @@ async function searchForMovies(event){
         page-=1;
         document.getElementById("searchMovie").value = ""
         document.getElementById("searchMovie").placeholder = "Enter Movie a Title"
+        btnClear.style.display = 'none'
         getMovies();
 
 
