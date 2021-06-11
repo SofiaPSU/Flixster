@@ -27,8 +27,6 @@ Deployed Application (optional): [Flixster Deployed Site](https://sofiapsu.githu
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
 <a href="https://www.loom.com/share/e9b67675fcfd4d5f9fc33eb8c2075871">
     <p>Flixster - Watch Video</p>
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/e9b67675fcfd4d5f9fc33eb8c2075871-with-play.gif">
