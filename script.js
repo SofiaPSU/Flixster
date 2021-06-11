@@ -9,24 +9,8 @@ const loadBtn = document.getElementById("button");
 const loadForm = document.getElementById("searchMovies");
 loadForm.addEventListener("submit", searchForMovies);
 
-/*var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn")
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function(){
-    modal.style.display = "block";
-}
-span.onclick = function(){
-    modal.style.display = "none"
-}
-
-window.onclick = function(event){
-    if (event.target == modal){
-        modal.style.display = "none";
-    }
-}*/
 /*
-Example API Request: https://api.themoviedb.org/3/search/movie?api_key=8c30e394ac60b88dd3d26490d12af360
+Example API Request: https://api.themoviedb.org/3/search/movie?api_key=
 https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
 https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
 */
@@ -37,16 +21,11 @@ async function getMovies(){
     //Configuration
     const configuration = await fetch(configurationUrl);
     const configJson = await configuration.json();
-  //  console.log(configJson)
     const configImageUrl = configJson.images.secure_base_url;
     //Now Playing
     const apiUrlNowPlaying=`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=${page}`
     const fetchAllMovies = await fetch(apiUrlNowPlaying);
- //   console.log(fetchAllMovies)
     const jsonMovies = await fetchAllMovies.json();
-  //  console.log("json",jsonMovies)
-  //  console.log(configImageUrl)
-
     //show Movies on HTML using forEach
     jsonMovies.results.forEach(element => {
         movies.innerHTML += `
@@ -69,10 +48,8 @@ async function getMovies(){
     jsonMovies.results.forEach(element => {
         //need to figure out how to use element
        var modal = document.getElementById("myModal");
-      //  var img = document.getElementById("movieImage")
         var modalImg = document.getElementById("img1");
         var captionText = document.getElementById("caption");
-      //  console.log(document.getElementById("movieImage"))
         var img = `https://image.tmdb.org/t/p/original${element.poster_path}`
        
         img.onclick = function(){
@@ -103,9 +80,8 @@ async function searchForMovies(event){
     const findMovie = searchInput.value;
     const apiUrlSearch=`https://api.themoviedb.org/3/search/movie?query=${findMovie}&api_key=${apiKey}&language=en-US&page=${page}&include_adult=false`
     const fetchMovieSearch = await fetch(apiUrlSearch);
-   // console.log(fetchMovieSearch);
     const fetchMovieSearchJson = await fetchMovieSearch.json();
-   // console.log("search json", fetchMovieSearchJson);
+ 
 
     //remove now playing movies from innerhtml
     movies.innerHTML="";
@@ -118,9 +94,10 @@ async function searchForMovies(event){
         movies.innerHTML="";
         now_playing.innerHTML = `<h2>Now Playing</h2>`
         loadBtn.style.display='block'
-        page-=1;
+        page=1;
         document.getElementById("searchMovie").value = ""
         document.getElementById("searchMovie").placeholder = "Enter Movie a Title"
+        clearbtn.style.display ='none'
         getMovies();
 
 
