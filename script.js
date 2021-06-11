@@ -65,7 +65,7 @@ async function getMovies(){
         
     });
     page++;
-
+    
 }
 
 async function searchForMovies(event){
@@ -90,6 +90,7 @@ async function searchForMovies(event){
     now_playing.innerHTML = `<h2>Search Results</h2>`
     loadBtn.style.display = 'none';
     clearbtn.innerHTML = `<button id="btnClear">Clear Search</button>`
+    btnClear.style.display='block'
     btnClear.onclick = function() {
         movies.innerHTML="";
         now_playing.innerHTML = `<h2>Now Playing</h2>`
@@ -97,7 +98,7 @@ async function searchForMovies(event){
         page=1;
         document.getElementById("searchMovie").value = ""
         document.getElementById("searchMovie").placeholder = "Enter Movie a Title"
-        clearbtn.style.display ='none'
+        btnClear.style.display='none'
         getMovies();
 
 
