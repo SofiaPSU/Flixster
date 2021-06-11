@@ -98,7 +98,7 @@ async function searchForMovies(event){
         movies.innerHTML="";
         now_playing.innerHTML = `<h2>Now Playing</h2>`
         loadBtn.style.display='block'
-        page-=1;
+        page=1;
         document.getElementById("searchMovie").value = ""
         document.getElementById("searchMovie").placeholder = "Enter Movie a Title"
         btnClear.style.display = 'none'
